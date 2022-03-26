@@ -1,12 +1,12 @@
-import { StyledHeader } from './styled/Header.styled';
+import { StyledHeader, Container } from './styled/Model.styled';
 
 function Header() {
   return (
-    <StyledHeader>
-      <div className="container">
+    <Container>
+      <StyledHeader>
         <h2>Feedback App</h2>
-      </div>
-    </StyledHeader>
+      </StyledHeader>
+    </Container>
   );
 }
 
