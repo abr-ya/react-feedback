@@ -1,17 +1,13 @@
-import { useState } from 'react';
-import { StyledItem, BlockNum, BlockText } from './styled/Item.styled';
-import { Container } from './styled/Model.styled';
+import { BlockNum, BlockText } from './styled/Item.styled';
+import { Container, Card } from './styled/Model.styled';
 
-function Item() {
-  const [rating] = useState(7);
-  const [text] = useState('Я - текст отзыва!!!))');
-
+function Item({ rating, text }) {
   return (
     <Container>
-      <StyledItem>
+      <Card>
         <BlockNum>{rating}</BlockNum>
         <BlockText>{text}</BlockText>
-      </StyledItem>
+      </Card>
     </Container>
   );
 }
