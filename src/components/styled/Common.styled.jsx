@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 export const Container = styled.div`
   max-width: 768px;
@@ -25,4 +25,27 @@ export const Card = styled.div`
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
+`;
+
+export const StyledButton = styled.button`
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+
+  ${(props) => props.version === 'primary' && css`background-color: #202142;`}
+  ${(props) => props.version === 'secondary' && css`background-color: #ff6a95;`}
+
+  &:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    color: #333;
+    cursor: auto;
+  }
 `;

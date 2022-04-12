@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 import { BlockNum, BlockText, ButtonClose } from './styled/Item.styled';
-import { Container, Card } from './styled/Model.styled';
+import { Card } from './styled/Common.styled';
 
 function Item({
   rating, text, id, deleteHandler,
@@ -10,15 +10,13 @@ function Item({
   };
 
   return (
-    <Container>
-      <Card>
-        <BlockNum>{rating}</BlockNum>
-        <ButtonClose onClick={closeClickHandler}>
-          <FaTimes color="purple" />
-        </ButtonClose>
-        <BlockText>{text}</BlockText>
-      </Card>
-    </Container>
+    <Card>
+      <BlockNum>{rating}</BlockNum>
+      <ButtonClose onClick={closeClickHandler}>
+        <FaTimes color="purple" />
+      </ButtonClose>
+      <BlockText>{text}</BlockText>
+    </Card>
   );
 }
 

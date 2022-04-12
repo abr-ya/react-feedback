@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import Header from './components/Header';
-import List from './components/List';
-import Rating from './components/Rating';
+import { Container } from './components/styled/Common.styled';
+import {
+  Header, List, Rating, Form,
+} from './components';
 import FeedbackData from './data/FeedbackData';
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   const deleteHandler = (id) => {
-    console.log('delete item', id);
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback((prev) => prev.filter((item) => item.id !== id));
     }
@@ -16,8 +16,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Rating feedback={feedback} />
-      <List feedback={feedback} deleteHandler={deleteHandler} />
+      <Container>
+        <Form />
+        <Rating feedback={feedback} />
+        <List feedback={feedback} deleteHandler={deleteHandler} />
+      </Container>
     </div>
   );
 }

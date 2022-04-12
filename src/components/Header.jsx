@@ -1,4 +1,4 @@
-import { StyledHeader, Container } from './styled/Model.styled';
+import { StyledHeader, Container } from './styled/Common.styled';
 
 function Header() {
   return (

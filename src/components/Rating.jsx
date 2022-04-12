@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container } from './styled/Model.styled';
+import { Container } from './styled/Common.styled';
 import { StyledRating } from './styled/Rating.styled';
 
 function Rating({ feedback }) {

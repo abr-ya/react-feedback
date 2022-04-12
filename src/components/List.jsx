@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import { StyledList } from './styled/List.styled';
-import { Container } from './styled/Model.styled';
 import Item from './Item';
 
 function List({ feedback, deleteHandler }) {
   if (!feedback || feedback.length === 0) {
-    return <Container><span>No feedback yet</span></Container>;
+    return <span>No feedback yet</span>;
   }
 
   return (
