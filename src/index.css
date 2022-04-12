@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #202142;
+  background-color: #2bbb;
   color: #fff;
   line-height: 1.6;
 }
@@ -82,13 +82,6 @@ input {
 
 input:focus {
   outline: none;
-}
-
-.feedback-stats {
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .close,

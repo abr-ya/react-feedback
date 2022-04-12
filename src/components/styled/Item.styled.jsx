@@ -1,5 +1,14 @@
 import styled from 'styled-components/macro';
 
+export const ButtonClose = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+`;
+
 export const BlockNum = styled.div`
   background: #ff6a95;
   color: #fff;
@@ -19,15 +28,6 @@ export const BlockNum = styled.div`
 
 export const BlockText = styled.div`
   background-color: aqua;
-`;
-
-export const ButtonClose = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  background: none;
-  border: none;
 `;
 
 /** *
