@@ -2,27 +2,34 @@ import PropTypes from 'prop-types';
 import { StyledList } from './styled/List.styled';
 import Item from './Item';
 
-function List({ feedback }) {
+function List({ feedback, deleteHandler }) {
   if (!feedback || feedback.length === 0) {
-    return <span>нет отзывов</span>;
+    return <span>No feedback yet</span>;
   }
 
   return (
     <StyledList>
-      {feedback.map((item) => <Item rating={item.rating} text={item.text} key={item.id} />)}
+      {feedback.map((item) => (
+        <Item
+          id={item.id}
+          rating={item.rating}
+          text={item.text}
+          key={item.id}
+          deleteHandler={deleteHandler}
+        />
+      ))}
     </StyledList>
   );
 }
 
-// eslint-disable-next-line react/no-typos
-List.PropTypes = {
+List.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       text: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
     }),
-  ),
+  ).isRequired,
 };
 
 export default List;

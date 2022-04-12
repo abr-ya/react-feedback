@@ -21,6 +21,15 @@ export const BlockText = styled.div`
   background-color: aqua;
 `;
 
+export const ButtonClose = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+`;
+
 /** *
 .card.reverse {
   background-color: rgba(0, 0, 0, 0.4);
