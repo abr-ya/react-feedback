@@ -4,9 +4,11 @@ import {
 } from './styled/Form.styled';
 import { Card } from './styled/Common.styled';
 import Button from './Button';
+import RatingSet from './RatingSet';
 
 function Form() {
   const [text, setText] = useState('');
+  const [rating, setRating] = useState(0);
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
 
@@ -29,7 +31,8 @@ function Form() {
   return (
     <Card>
       <StyledForm>
-        <h4>How would you rate it?!</h4>
+        <h4>How would you rate us?!</h4>
+        <RatingSet select={setRating} selected={rating} />
         <Group>
           <Input
             type="text"
