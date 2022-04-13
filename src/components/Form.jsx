@@ -1,13 +1,29 @@
 import { useState } from 'react';
-import { StyledForm, Group, Input } from './styled/Form.styled';
+import {
+  StyledForm, Group, Input, ValidationMessage,
+} from './styled/Form.styled';
 import { Card } from './styled/Common.styled';
 import Button from './Button';
 
 function Form() {
   const [text, setText] = useState('');
+  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+  const [message, setMessage] = useState('');
 
-  const inputChangeHandler = (e) => {
-    setText(e.target.value);
+  const inputChangeHandler = ({ target: { value } }) => {
+    // validation
+    if (value === '') {
+      setIsBtnDisabled(true);
+      setMessage(null);
+    } else if (value.trim().length < 10) {
+      setMessage('Text must be at least 10 characters');
+      setIsBtnDisabled(true);
+    } else {
+      setMessage(null);
+      setIsBtnDisabled(false);
+    }
+
+    setText(value);
   };
 
   return (
@@ -21,10 +37,13 @@ function Form() {
             placeholder="Write a review"
             onChange={inputChangeHandler}
           />
-          <Button type="submit">
+          <Button type="submit" isDisabled={isBtnDisabled}>
             Send
           </Button>
         </Group>
+        <ValidationMessage>
+          {message}
+        </ValidationMessage>
       </StyledForm>
     </Card>
   );

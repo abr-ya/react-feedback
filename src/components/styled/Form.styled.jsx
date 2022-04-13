@@ -22,3 +22,9 @@ export const Input = styled.input`
     outline: none;
   }
 `;
+
+export const ValidationMessage = styled.div`
+  padding-top: 10px;
+  text-align: center;
+  color: rebeccapurple;
+`;
