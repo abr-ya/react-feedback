@@ -8,6 +8,7 @@ import FeedbackData from './data/FeedbackData';
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   const deleteHandler = (id) => {
+    // eslint-disable-next-line no-alert
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback((prev) => prev.filter((item) => item.id !== id));
     }
