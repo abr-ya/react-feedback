@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { StyledButton } from './styled/Common.styled';
 
 function Button({
-  children, version, type, isDisabled,
+  children, version, type, isDisabled, style,
 }) {
   return (
-    <StyledButton type={type} disabled={isDisabled} version={version}>
+    <StyledButton type={type} disabled={isDisabled} version={version} style={style}>
       {children}
     </StyledButton>
   );

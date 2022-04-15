@@ -13,12 +13,17 @@ function App() {
       setFeedback((prev) => prev.filter((item) => item.id !== id));
     }
   };
+  const addHandler = (item) => {
+    setFeedback((prev) => [item, ...prev]);
+    // eslint-disable-next-line no-alert
+    alert('Спасибо за ваш отзыв!');
+  };
 
   return (
     <div className="App">
       <Header />
       <Container>
-        <Form />
+        <Form addHandler={addHandler} />
         <Rating feedback={feedback} />
         <List feedback={feedback} deleteHandler={deleteHandler} />
       </Container>
