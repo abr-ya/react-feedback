@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container } from './components/styled/Common.styled';
+import GlobalStyle, { Container } from './components/styled/Common.styled';
 import {
   Header, List, Rating, Form,
 } from './components';
@@ -20,14 +20,15 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
+      <GlobalStyle />
       <Header />
       <Container>
         <Form addHandler={addHandler} />
         <Rating feedback={feedback} />
         <List feedback={feedback} deleteHandler={deleteHandler} />
       </Container>
-    </div>
+    </>
   );
 }
 

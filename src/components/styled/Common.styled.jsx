@@ -1,4 +1,23 @@
-import styled, { css } from 'styled-components/macro';
+import styled, { css, createGlobalStyle } from 'styled-components/macro';
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2bbb;
+    color: #fff;
+    line-height: 1.6;
+  }
+`;
+
+export default GlobalStyle;
 
 export const Container = styled.div`
   max-width: 768px;
