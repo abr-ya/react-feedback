@@ -2,8 +2,6 @@ import styled, { css, createGlobalStyle } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
   * {
     box-sizing: border-box;
     margin: 0;
@@ -70,13 +68,13 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const AboutLinkBlock = styled.div`
-  position: absolute;
+export const NavLinkBlock = styled.div`
+  position: fixed;
   top: 20px;
   right: 20px;
 `;
 
-export const AboutLink = styled(Link)`
+export const NavLink = styled(Link)`
   color: #fff;
   cursor: pointer;
 

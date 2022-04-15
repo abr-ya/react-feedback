@@ -1,10 +1,10 @@
 import { StyledHeader, Container } from './styled/Common.styled';
-import NavIconLink from './NavIconLink';
+import NavIcon from './NavIcon';
 
 function Header() {
   return (
     <>
-      <NavIconLink />
+      <NavIcon />
       <Container>
         <StyledHeader>
           <h2>Feedback App</h2>

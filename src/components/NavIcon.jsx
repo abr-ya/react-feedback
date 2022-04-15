@@ -1,18 +1,18 @@
 import { useLocation } from 'react-router-dom';
 import { FaQuestion, FaHome } from 'react-icons/fa';
-import { AboutLinkBlock, AboutLink } from './styled/Common.styled';
+import { NavLinkBlock, NavLink } from './styled/Common.styled';
 
-function AboutIconLink() {
+function NavIcon() {
   const { pathname } = useLocation();
   const isAbout = ['/about', '/about/'].includes(pathname);
 
   return (
-    <AboutLinkBlock>
-      <AboutLink to={isAbout ? '/' : '/about'}>
+    <NavLinkBlock>
+      <NavLink to={isAbout ? '/' : '/about'}>
         {isAbout ? <FaHome size={30} /> : <FaQuestion size={30} />}
-      </AboutLink>
-    </AboutLinkBlock>
+      </NavLink>
+    </NavLinkBlock>
   );
 }
 
-export default AboutIconLink;
+export default NavIcon;

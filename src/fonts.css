@@ -1,4 +1,6 @@
-.close,
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/**
 .edit {
   position: absolute;
   top: 10px;
@@ -11,3 +13,4 @@
 .edit {
   right: 40px;
 }
+**/
