@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 import { StyledList } from './styled/List.styled';
 import Item from './Item';
 
@@ -9,15 +10,25 @@ function List({ feedback, deleteHandler }) {
 
   return (
     <StyledList>
-      {feedback.map((item) => (
-        <Item
-          id={item.id}
-          rating={item.rating}
-          text={item.text}
-          key={item.id}
-          deleteHandler={deleteHandler}
-        />
-      ))}
+      <AnimatePresence>
+        {feedback.map((item) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.75 }}
+          >
+            <Item
+              id={item.id}
+              rating={item.rating}
+              text={item.text}
+              key={item.id}
+              deleteHandler={deleteHandler}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </StyledList>
   );
 }

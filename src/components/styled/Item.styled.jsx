@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 export const ButtonClose = styled.button`
   position: absolute;
@@ -27,19 +27,10 @@ export const BlockNum = styled.div`
 `;
 
 export const BlockText = styled.div`
-  background-color: aqua;
+  background-color: #fff;
+
+  ${(props) => props.reverse && css`
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  `}
 `;
-
-/** *
-.card.reverse {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-}
-
-.card h2 {
-  font-size: 22px;
-  font-weight: 600;
-  text-align: center;
-}
-
-** */
